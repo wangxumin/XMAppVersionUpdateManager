@@ -11,8 +11,6 @@
 @implementation XMAppVersionUpdateManager
 + (void)checkAppVersion{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        @try {
-            
         if ([APPID isEqual: @""] || APPID.length == 0) {
             @throw [NSException exceptionWithName:@"HasNoAPPID" reason:@"没有设置APPID" userInfo:nil];
             return ;
@@ -74,12 +72,6 @@
             }
         }];
         [task resume];
-            
-        } @catch (NSException *exception) {
-            NSLog(@"%@",exception);
-        } @finally {
-            
-        }
     });
 }
 
