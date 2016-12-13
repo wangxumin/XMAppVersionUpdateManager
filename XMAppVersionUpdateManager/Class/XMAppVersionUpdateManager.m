@@ -51,9 +51,13 @@
                     
                 }];
                 NSString *alertVCTitle = [NSString stringWithFormat:@"有新版本更新\n%@",appVersionStr];
-                NSMutableAttributedString *alertControllerStr = [self changeStrWith:alertVCTitle range:NSMakeRange(6, alertVCTitle.length - 6) strColor:[UIColor lightGrayColor] strFont:[UIFont systemFontOfSize:16]];
+                NSMutableAttributedString *alertVCAttributedTitle = [self changeStrWith:alertVCTitle range:NSMakeRange(6, alertVCTitle.length - 6) strColor:[UIColor lightGrayColor] strFont:[UIFont systemFontOfSize:16]];
                 //修改提示框标题字体
-                [alertVC setValue:alertControllerStr forKey:@"attributedTitle"];
+                [alertVC setValue:alertVCAttributedTitle forKey:@"attributedTitle"];
+                
+                NSMutableAttributedString *alertVCAttributedMessage = [self changeStrWith:releaseNotes range:NSMakeRange(0, releaseNotes.length) strColor:[UIColor darkGrayColor] strFont:[UIFont systemFontOfSize:15.0]];
+                //修改提示信息格式
+                [alertVC setValue:alertVCAttributedMessage forKey:@"attributedMessage"];
                 
                 UIAlertAction *conformAction = [UIAlertAction actionWithTitle:@"前往更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     NSString *appStroeStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?l=en&mt=8", APPID];
