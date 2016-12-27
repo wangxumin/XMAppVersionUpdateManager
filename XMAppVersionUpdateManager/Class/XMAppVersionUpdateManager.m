@@ -9,11 +9,9 @@
 #import "XMAppVersionUpdateManager.h"
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
-
-@interface XMAppVersionUpdateManager()<SKStoreProductViewControllerDelegate>
-
-@end
-
+#import <objc/runtime.h>
+#import <objc/message.h>
+#import "SKStoreProductViewController+Addtion.h"
 @implementation XMAppVersionUpdateManager
 
 + (void)checkAppVersion{
@@ -74,13 +72,18 @@
                                                      };
                         [storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
                             
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                [currentVc presentViewController:storeViewController animated:YES completion:^{
-                                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
-                                    [[NSUserDefaults standardUserDefaults] synchronize];
-                                }];
-                            });
+                            if (!error) {
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [currentVc presentViewController:storeViewController animated:YES completion:^{
+                                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
+                                        [[NSUserDefaults standardUserDefaults] synchronize];
+                                    }];
+                                });
+                            }else{
+                                NSLog(@"%@",error);
+                            }
                         }];
+                        
                     }else{
                         NSString *appStroeStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?l=en&mt=8", APPID];
                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStroeStr]];

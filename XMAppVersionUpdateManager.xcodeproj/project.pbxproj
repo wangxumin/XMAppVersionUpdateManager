@@ -16,6 +16,7 @@
 		367A9FDD1DFFCCAF00E6F676 /* XMAppVersionUpdateManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 367A9FDC1DFFCCAF00E6F676 /* XMAppVersionUpdateManagerTests.m */; };
 		367A9FE81DFFCCAF00E6F676 /* XMAppVersionUpdateManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 367A9FE71DFFCCAF00E6F676 /* XMAppVersionUpdateManagerUITests.m */; };
 		367A9FF81DFFCCE600E6F676 /* XMAppVersionUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 367A9FF71DFFCCE600E6F676 /* XMAppVersionUpdateManager.m */; };
+		369362E51E1251BC00F20993 /* SKStoreProductViewController+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 369362E41E1251BC00F20993 /* SKStoreProductViewController+Addtion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		367A9FE91DFFCCAF00E6F676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		367A9FF61DFFCCE600E6F676 /* XMAppVersionUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMAppVersionUpdateManager.h; sourceTree = "<group>"; };
 		367A9FF71DFFCCE600E6F676 /* XMAppVersionUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAppVersionUpdateManager.m; sourceTree = "<group>"; };
+		369362E31E1251BC00F20993 /* SKStoreProductViewController+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKStoreProductViewController+Addtion.h"; sourceTree = "<group>"; };
+		369362E41E1251BC00F20993 /* SKStoreProductViewController+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKStoreProductViewController+Addtion.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 			children = (
 				367A9FF61DFFCCE600E6F676 /* XMAppVersionUpdateManager.h */,
 				367A9FF71DFFCCE600E6F676 /* XMAppVersionUpdateManager.m */,
+				369362E31E1251BC00F20993 /* SKStoreProductViewController+Addtion.h */,
+				369362E41E1251BC00F20993 /* SKStoreProductViewController+Addtion.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				367A9FCA1DFFCCAF00E6F676 /* ViewController.m in Sources */,
 				367A9FC71DFFCCAF00E6F676 /* AppDelegate.m in Sources */,
 				367A9FC41DFFCCAF00E6F676 /* main.m in Sources */,
+				369362E51E1251BC00F20993 /* SKStoreProductViewController+Addtion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
