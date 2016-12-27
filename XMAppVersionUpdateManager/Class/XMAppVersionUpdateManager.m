@@ -37,8 +37,8 @@
                 NSString *releaseNotes = messageDic[@"releaseNotes"];
                 if ([[NSUserDefaults standardUserDefaults] objectForKey:@"newVersion"] == nil ||[[NSUserDefaults standardUserDefaults] objectForKey:@"newVersion"] != appVersionStr) {
                     [[NSUserDefaults standardUserDefaults] setObject:appVersionStr forKey:@"newVersion"];
-//                    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"AppUpdate"];
-//                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"AppUpdate"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
                 }
                 if (appVersionStr == nil || [self getCurrentVersion] == appVersionStr || [[NSUserDefaults standardUserDefaults] boolForKey:@"AppUpdate"]){
                     return;

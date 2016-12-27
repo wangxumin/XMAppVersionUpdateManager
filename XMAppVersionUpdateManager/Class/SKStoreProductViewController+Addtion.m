@@ -24,9 +24,7 @@
         }else{
             method_exchangeImplementations(originalMethod, swizzledMethod);
         }
-        
     });
-
 }
 - (void)vc_didFinish{
     [self vc_didFinish];
