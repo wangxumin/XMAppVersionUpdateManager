@@ -20,7 +20,6 @@
     // Override point for customization after application launch.
     ViewController *rootVC = [[ViewController alloc] init];
     self.window.rootViewController = rootVC;
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyWindow];
     [self.window makeKeyAndVisible];
     

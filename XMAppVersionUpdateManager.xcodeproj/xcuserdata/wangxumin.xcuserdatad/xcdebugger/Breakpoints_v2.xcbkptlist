@@ -2,4 +2,70 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMAppVersionUpdateManager/Class/XMAppVersionUpdateManager.m"
+            timestampString = "504512950.160347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "+checkAppVersion"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44+[XMAppVersionUpdateManager checkAppVersion]_block_invoke_2"
+                  moduleName = "XMAppVersionUpdateManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wangxumin/Desktop/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/XMAppVersionUpdateManager/XMAppVersionUpdateManager/Class/XMAppVersionUpdateManager.m"
+                  timestampString = "504512971.547419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "2628">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44+[XMAppVersionUpdateManager checkAppVersion]_block_invoke_4"
+                  moduleName = "XMAppVersionUpdateManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wangxumin/Desktop/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/XMAppVersionUpdateManager/XMAppVersionUpdateManager/Class/XMAppVersionUpdateManager.m"
+                  timestampString = "504512971.548679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMAppVersionUpdateManager/Class/XMAppVersionUpdateManager.m"
+            timestampString = "504512964.505081"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "+activityViewController"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

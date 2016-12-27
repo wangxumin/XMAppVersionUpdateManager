@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-static const NSString *APPID = @"";
+static const NSString *APPID = @"1173419740";
 
 @interface XMAppVersionUpdateManager : NSObject
 

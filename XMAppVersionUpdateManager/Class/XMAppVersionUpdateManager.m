@@ -8,7 +8,14 @@
 
 #import "XMAppVersionUpdateManager.h"
 #import <UIKit/UIKit.h>
+#import <StoreKit/StoreKit.h>
+
+@interface XMAppVersionUpdateManager()<SKStoreProductViewControllerDelegate>
+
+@end
+
 @implementation XMAppVersionUpdateManager
+
 + (void)checkAppVersion{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         if ([APPID isEqual: @""] || APPID.length == 0) {
@@ -39,34 +46,51 @@
                 if (appVersionStr == nil || [self getCurrentVersion] == appVersionStr || [[NSUserDefaults standardUserDefaults] boolForKey:@"AppUpdate"]){
                     return;
                 }
-                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"有新版本更新\n%@",appVersionStr] message:releaseNotes preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"有新版本更新\n%@\n",appVersionStr] message:releaseNotes preferredStyle:UIAlertControllerStyleAlert];
                 UIView *messageParentView = [self getParentViewOfTitleAndMessageFromView:alertVC.view];
                 if (messageParentView && messageParentView.subviews.count > 1) {
                     UILabel *messageLb = messageParentView.subviews[1];
                     messageLb.textAlignment = NSTextAlignmentLeft;
                 }
                 UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"稍后更新" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                    
                 }];
                 NSString *alertVCTitle = [NSString stringWithFormat:@"有新版本更新\n%@",appVersionStr];
                 NSMutableAttributedString *alertVCAttributedTitle = [self changeStrWith:alertVCTitle range:NSMakeRange(6, alertVCTitle.length - 6) strColor:[UIColor lightGrayColor] strFont:[UIFont systemFontOfSize:16]];
                 //修改提示框标题字体
                 [alertVC setValue:alertVCAttributedTitle forKey:@"attributedTitle"];
-                
                 NSMutableAttributedString *alertVCAttributedMessage = [self changeStrWith:releaseNotes range:NSMakeRange(0, releaseNotes.length) strColor:[UIColor darkGrayColor] strFont:[UIFont systemFontOfSize:15.0]];
                 //修改提示信息格式
                 [alertVC setValue:alertVCAttributedMessage forKey:@"attributedMessage"];
                 
+                //获取当前控制器
+                UIViewController *currentVc = [self activityViewController];
+                
                 UIAlertAction *conformAction = [UIAlertAction actionWithTitle:@"前往更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    NSString *appStroeStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?l=en&mt=8", APPID];
-                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStroeStr]];
-                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+                        SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
+                        NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier : APPID,
+                                                     SKStoreProductParameterAffiliateToken : [NSString string],
+                                                     SKStoreProductParameterCampaignToken : [NSString string]
+                                                     };
+                        [storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
+                            
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [currentVc presentViewController:storeViewController animated:YES completion:^{
+                                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
+                                    [[NSUserDefaults standardUserDefaults] synchronize];
+                                }];
+                            });
+                        }];
+                    }else{
+                        NSString *appStroeStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?l=en&mt=8", APPID];
+                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStroeStr]];
+                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    }
                 }];
                 [alertVC addAction:cancleAction];
                 [alertVC addAction:conformAction];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    UIViewController *currentVc = [self activityViewController];
                     [currentVc presentViewController:alertVC animated:YES completion:nil];
                 });
             }
@@ -140,7 +164,6 @@
             }
         }
     }
-    
     NSArray *viewsArray = [window subviews];
     if([viewsArray count] > 0)
     {
