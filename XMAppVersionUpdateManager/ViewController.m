@@ -7,12 +7,16 @@
 //
 
 #import "ViewController.h"
-
+#import "XMAppVersionUpdateManager.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+- (IBAction)checkVersionAction:(UIButton *)sender {
+    //检查版本
+    [XMAppVersionUpdateManager checkAppVersion];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

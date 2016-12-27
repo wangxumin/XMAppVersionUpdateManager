@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "XMAppVersionUpdateManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,13 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    ViewController *rootVC = [[ViewController alloc] init];
-    self.window.rootViewController = rootVC;
-    [self.window makeKeyWindow];
-    [self.window makeKeyAndVisible];
+//    ViewController *rootVC = [[ViewController alloc] init];
+//    self.window.rootViewController = rootVC;
+//    [self.window makeKeyWindow];
+//    [self.window makeKeyAndVisible];
     
-    //检查版本
-    [XMAppVersionUpdateManager checkAppVersion];
+    
     
     return YES;
 }
