@@ -80,14 +80,11 @@
                                 });
                             }else{
                                 NSLog(@"%@",error);
+                                [self moveToAppStore];//如果界面初始化打开错误，尝试直接跳转到appStore
                             }
                         }];
-                        
                     }else{
-                        NSString *appStroeStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?l=en&mt=8", APPID];
-                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStroeStr]];
-                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
-                        [[NSUserDefaults standardUserDefaults] synchronize];
+                        [self moveToAppStore];
                     }
                 }];
                 [alertVC addAction:cancleAction];
@@ -99,6 +96,16 @@
         }];
         [task resume];
     });
+}
+
+/**
+ 跳转到appStore
+ */
++ (void)moveToAppStore{
+    NSString *appStroeStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?l=en&mt=8", APPID];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStroeStr]];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AppUpdate"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 /**
