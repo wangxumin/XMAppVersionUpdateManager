@@ -17,6 +17,11 @@
 		367A9FE81DFFCCAF00E6F676 /* XMAppVersionUpdateManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 367A9FE71DFFCCAF00E6F676 /* XMAppVersionUpdateManagerUITests.m */; };
 		367A9FF81DFFCCE600E6F676 /* XMAppVersionUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 367A9FF71DFFCCE600E6F676 /* XMAppVersionUpdateManager.m */; };
 		369362E51E1251BC00F20993 /* SKStoreProductViewController+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 369362E41E1251BC00F20993 /* SKStoreProductViewController+Addtion.m */; };
+		369362F61E13BC8E00F20993 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369362EE1E13BC8E00F20993 /* SVIndefiniteAnimatedView.m */; };
+		369362F71E13BC8E00F20993 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 369362F01E13BC8E00F20993 /* SVProgressAnimatedView.m */; };
+		369362F81E13BC8E00F20993 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 369362F11E13BC8E00F20993 /* SVProgressHUD.bundle */; };
+		369362F91E13BC8E00F20993 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 369362F31E13BC8E00F20993 /* SVProgressHUD.m */; };
+		369362FA1E13BC8E00F20993 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 369362F51E13BC8E00F20993 /* SVRadialGradientLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,15 @@
 		367A9FF71DFFCCE600E6F676 /* XMAppVersionUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMAppVersionUpdateManager.m; sourceTree = "<group>"; };
 		369362E31E1251BC00F20993 /* SKStoreProductViewController+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKStoreProductViewController+Addtion.h"; sourceTree = "<group>"; };
 		369362E41E1251BC00F20993 /* SKStoreProductViewController+Addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKStoreProductViewController+Addtion.m"; sourceTree = "<group>"; };
+		369362ED1E13BC8E00F20993 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		369362EE1E13BC8E00F20993 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		369362EF1E13BC8E00F20993 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		369362F01E13BC8E00F20993 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		369362F11E13BC8E00F20993 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		369362F21E13BC8E00F20993 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		369362F31E13BC8E00F20993 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		369362F41E13BC8E00F20993 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		369362F51E13BC8E00F20993 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +126,7 @@
 				367A9FC61DFFCCAF00E6F676 /* AppDelegate.m */,
 				367A9FC81DFFCCAF00E6F676 /* ViewController.h */,
 				367A9FC91DFFCCAF00E6F676 /* ViewController.m */,
+				369362EC1E13BC8E00F20993 /* SVProgressHUD */,
 				367A9FCB1DFFCCAF00E6F676 /* Main.storyboard */,
 				367A9FCE1DFFCCAF00E6F676 /* Assets.xcassets */,
 				367A9FD01DFFCCAF00E6F676 /* LaunchScreen.storyboard */,
@@ -156,6 +171,22 @@
 				369362E41E1251BC00F20993 /* SKStoreProductViewController+Addtion.m */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		369362EC1E13BC8E00F20993 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				369362ED1E13BC8E00F20993 /* SVIndefiniteAnimatedView.h */,
+				369362EE1E13BC8E00F20993 /* SVIndefiniteAnimatedView.m */,
+				369362EF1E13BC8E00F20993 /* SVProgressAnimatedView.h */,
+				369362F01E13BC8E00F20993 /* SVProgressAnimatedView.m */,
+				369362F11E13BC8E00F20993 /* SVProgressHUD.bundle */,
+				369362F21E13BC8E00F20993 /* SVProgressHUD.h */,
+				369362F31E13BC8E00F20993 /* SVProgressHUD.m */,
+				369362F41E13BC8E00F20993 /* SVRadialGradientLayer.h */,
+				369362F51E13BC8E00F20993 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +301,7 @@
 				367A9FD21DFFCCAF00E6F676 /* LaunchScreen.storyboard in Resources */,
 				367A9FCF1DFFCCAF00E6F676 /* Assets.xcassets in Resources */,
 				367A9FCD1DFFCCAF00E6F676 /* Main.storyboard in Resources */,
+				369362F81E13BC8E00F20993 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,10 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				367A9FF81DFFCCE600E6F676 /* XMAppVersionUpdateManager.m in Sources */,
+				369362FA1E13BC8E00F20993 /* SVRadialGradientLayer.m in Sources */,
+				369362F91E13BC8E00F20993 /* SVProgressHUD.m in Sources */,
 				367A9FCA1DFFCCAF00E6F676 /* ViewController.m in Sources */,
 				367A9FC71DFFCCAF00E6F676 /* AppDelegate.m in Sources */,
+				369362F71E13BC8E00F20993 /* SVProgressAnimatedView.m in Sources */,
 				367A9FC41DFFCCAF00E6F676 /* main.m in Sources */,
 				369362E51E1251BC00F20993 /* SKStoreProductViewController+Addtion.m in Sources */,
+				369362F61E13BC8E00F20993 /* SVIndefiniteAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

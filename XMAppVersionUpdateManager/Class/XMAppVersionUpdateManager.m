@@ -11,6 +11,7 @@
 #import <StoreKit/StoreKit.h>
 #import <objc/runtime.h>
 #import "SKStoreProductViewController+Addtion.h"
+#import "SVProgressHUD.h"
 @implementation XMAppVersionUpdateManager
 
 + (void)checkAppVersion{
@@ -63,6 +64,7 @@
                 UIViewController *currentVc = [self activityViewController];
                 
                 UIAlertAction *conformAction = [UIAlertAction actionWithTitle:@"前往更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [SVProgressHUD show];
                     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
                         SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
                         NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier : APPID,
@@ -70,7 +72,7 @@
                                                      SKStoreProductParameterCampaignToken : [NSString string]
                                                      };
                         [storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
-                            
+                            [SVProgressHUD dismiss];
                             if (!error) {
                                 dispatch_async(dispatch_get_main_queue(), ^{
                                     [currentVc presentViewController:storeViewController animated:YES completion:^{
@@ -85,6 +87,7 @@
                         }];
                     }else{
                         [self moveToAppStore];
+                        [SVProgressHUD dismiss];
                     }
                 }];
                 [alertVC addAction:cancleAction];
