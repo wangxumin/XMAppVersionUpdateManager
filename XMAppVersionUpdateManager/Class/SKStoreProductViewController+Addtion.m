@@ -28,6 +28,7 @@
 }
 - (void)vc_didFinish{
     [self vc_didFinish];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"AppUpdate"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
